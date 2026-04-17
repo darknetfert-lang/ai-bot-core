@@ -1,3 +1,5 @@
+import os
+
 while True:
     cmd = input(">> ")
 
@@ -5,7 +7,14 @@ while True:
         print("Hola 👋")
 
     elif cmd == "run":
-        print("Ejecutando...")
+        print("Ejecutando tarea...")
+
+    elif cmd.startswith("open "):
+        app = cmd.replace("open ", "")
+        os.system(app)
+
+    elif cmd == "clear":
+        os.system("clear")
 
     elif cmd == "exit":
         print("Bye 👋")
