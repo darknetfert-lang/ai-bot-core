@@ -36,6 +36,9 @@ while True:
     elif cmd == "run":
         print("Ejecutando tarea...")
 
+    elif "google" in cmd:
+    os.system("termux-open-url https://google.com")
+
     elif cmd.startswith("open "):
         app = cmd.replace("open ", "")
         print(f"Abriendo {app}...")
