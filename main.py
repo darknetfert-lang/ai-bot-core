@@ -38,9 +38,32 @@ while True:
     elif cmd == "help":
         help_menu()
 
+    elif cmd.startswith("calc "):
+    try:
+        result = eval(cmd.replace("calc ", ""))
+        print("Resultado:", result)
+    except:
+        print("Error en cálculo")
+
+    elif "como estas" in cmd or "cómo estás" in cmd:
+    print("Todo bien 😎 ¿y tú?")
+
+    elif "quien eres" in cmd:
+    print("Soy tu bot 🔥")
+
+    elif "hora" in cmd:
+    import datetime
+    print(datetime.datetime.now().strftime("%H:%M:%S"))
+
+    elif cmd == "clear":
+    os.system("clear")
+
+    elif cmd == "help":
+    help_menu()
+
     elif cmd == "exit":
-        print("Bye 👋")
-        break
+    print("Bye 👋")
+    break
 
     else:
-        print("Comando no reconocido (usa 'help')")
+    print("Comando no reconocido (usa 'help')")
