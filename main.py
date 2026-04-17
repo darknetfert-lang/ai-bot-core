@@ -25,6 +25,13 @@ while True:
         print(f"Abriendo {app}...")
         os.system(app)
 
+    elif cmd.startswith("calc "):
+    try:
+        result = eval(cmd.replace("calc ", ""))
+        print("Resultado:", result)
+    except:
+        print("Error en cálculo")
+
     elif cmd == "clear":
         os.system("clear")
 
