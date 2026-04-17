@@ -4,6 +4,20 @@
 
 ---
 
+## 🧠 Commands
+
+| Command    | Description                |
+|------------|----------------------------|
+| hola       | Greets the user            |
+| run        | Simulates a task           |
+| open <app> | Opens an application       |
+| calc <expr>| Calculates expressions     |
+| clear      | Clears the screen          |
+| help       | Shows available commands   |
+| exit       | Exits the bot              |
+
+---
+
 ## ⚡ Features
 - Command-based interaction
 - Simple AI responses
