@@ -1,4 +1,5 @@
 import os
+import datetime
 
 def help_menu():
     print("""
@@ -6,11 +7,26 @@ Comandos disponibles:
 - hola
 - run
 - open <app>
+- calc <expresión>
+- como estas
+- quien eres
+- hora
 - clear
 - exit
 - help
 """)
 
+# 👇 Saludo automático
+hora = datetime.datetime.now().hour
+
+if hora < 12:
+    print("Buenos días ☀️")
+elif hora < 18:
+    print("Buenas tardes 🌇")
+else:
+    print("Buenas noches 🌙")
+
+# 👇 Loop principal
 while True:
     cmd = input(">> ").lower()
 
@@ -26,11 +42,20 @@ while True:
         os.system(app)
 
     elif cmd.startswith("calc "):
-    try:
-        result = eval(cmd.replace("calc ", ""))
-        print("Resultado:", result)
-    except:
-        print("Error en cálculo")
+        try:
+            result = eval(cmd.replace("calc ", ""))
+            print("Resultado:", result)
+        except:
+            print("Error en cálculo")
+
+    elif "como estas" in cmd or "cómo estás" in cmd:
+        print("Todo bien 😎 ¿y tú?")
+
+    elif "quien eres" in cmd:
+        print("Soy tu bot 🔥")
+
+    elif "hora" in cmd:
+        print(datetime.datetime.now().strftime("%H:%M:%S"))
 
     elif cmd == "clear":
         os.system("clear")
@@ -38,32 +63,9 @@ while True:
     elif cmd == "help":
         help_menu()
 
-    elif cmd.startswith("calc "):
-    try:
-        result = eval(cmd.replace("calc ", ""))
-        print("Resultado:", result)
-    except:
-        print("Error en cálculo")
-
-    elif "como estas" in cmd or "cómo estás" in cmd:
-    print("Todo bien 😎 ¿y tú?")
-
-    elif "quien eres" in cmd:
-    print("Soy tu bot 🔥")
-
-    elif "hora" in cmd:
-    import datetime
-    print(datetime.datetime.now().strftime("%H:%M:%S"))
-
-    elif cmd == "clear":
-    os.system("clear")
-
-    elif cmd == "help":
-    help_menu()
-
     elif cmd == "exit":
-    print("Bye 👋")
-    break
+        print("Bye 👋")
+        break
 
     else:
-    print("Comando no reconocido (usa 'help')")
+        print("Comando no reconocido (usa 'help')")
