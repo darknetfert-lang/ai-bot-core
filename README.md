@@ -43,3 +43,4 @@ Bot: Ejecutando...
 
 ## 👤 Author
 Delt4_Haze
+Trabajando por mis logros de GitHub
